@@ -1,100 +1,245 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import { Container, Row, Col } from "react-bootstrap";
-import {
-  dataabout,
-  meta,
-  worktimeline,
-  skills,
-  services,
-} from "../../content_option";
+import { dataabout, accolades, filmography, meta } from "../../content_option";
+import { Link } from "react-router-dom";
+import Typewriter from "typewriter-effect";
 
 export const About = () => {
+  const [currentFilmIndex, setCurrentFilmIndex] = useState(0);
+  const [isHovering, setIsHovering] = useState(false);
+  const filmScrollRef = useRef(null);
+
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    const elements = document.querySelectorAll('.fade-in-section');
+    elements.forEach(el => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Auto-scroll filmography every 1 second
+  useEffect(() => {
+    if (isHovering) return; // Don't auto-scroll when hovering
+
+    const interval = setInterval(() => {
+      setCurrentFilmIndex((prevIndex) => 
+        prevIndex === filmography.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [isHovering]);
+
+  // Scroll to current film
+  useEffect(() => {
+    if (filmScrollRef.current) {
+      const filmWidth = filmScrollRef.current.scrollWidth / filmography.length;
+      filmScrollRef.current.scrollTo({
+        left: filmWidth * currentFilmIndex,
+        behavior: 'smooth'
+      });
+    }
+  }, [currentFilmIndex]);
+
+  const handleFilmClick = (index) => {
+    setCurrentFilmIndex(index);
+  };
+
+  const handlePrevFilm = () => {
+    setCurrentFilmIndex((prevIndex) => 
+      prevIndex === 0 ? filmography.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleNextFilm = () => {
+    setCurrentFilmIndex((prevIndex) => 
+      prevIndex === filmography.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
   return (
     <HelmetProvider>
-      <Container className="About-header">
+      <div className="about-page">
         <Helmet>
           <meta charSet="utf-8" />
-          <title> About | {meta.title}</title>
+          <title>About the Founder | {meta.title}</title>
           <meta name="description" content={meta.description} />
         </Helmet>
-        <Row className="mb-5 mt-3 pt-md-3">
-          <Col lg="8">
-            <h1 className="display-4 mb-4">About me</h1>
-            <hr className="t_border my-4 ml-0 text-left" />
-          </Col>
-        </Row>
-        <Row className="sec_sp">
-          <Col lg="5">
-            <h3 className="color_sec py-4">{dataabout.title}</h3>
-          </Col>
-          <Col lg="7" className="d-flex align-items-center">
-            <div>
-              <p>{dataabout.aboutme}</p>
+
+        {/* Hero Section */}
+        <div className="about-hero fade-in-section">
+          <div className="about-hero-content">
+            <div className="about-image-container image-animate">
+              <img 
+                src="https://vczctsjopkmmumlbmuzy.supabase.co/storage/v1/object/public/website/Headshot.jpeg" 
+                alt="Aryan Bhattacharjee" 
+                className="about-profile-image"
+              />
             </div>
-          </Col>
-        </Row>
-        <Row className=" sec_sp">
-          <Col lg="5">
-            <h3 className="color_sec py-4">Work Timline</h3>
-          </Col>
-          <Col lg="7">
-            <table className="table caption-top">
-              <tbody>
-                {worktimeline.map((data, i) => {
-                  return (
-                    <tr key={i}>
-                      <th scope="row">{data.jobtitle}</th>
-                      <td>{data.where}</td>
-                      <td>{data.date}</td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </Col>
-        </Row>
-        <Row className="sec_sp">
-          <Col lg="5">
-            <h3 className="color_sec py-4">Skills</h3>
-          </Col>
-          <Col lg="7">
-            {skills.map((data, i) => {
-              return (
-                <div key={i}>
-                  <h3 className="progress-title">{data.name}</h3>
-                  <div className="progress">
-                    <div
-                      className="progress-bar"
-                      style={{
-                        width: `${data.value}%`,
-                      }}
-                    >
-                      <div className="progress-value">{data.value}%</div>
+            <div className="about-text-container">
+              <h1 className="about-title split-text text-fade-in">
+                {dataabout.title.split('').map((char, index) => (
+                  <span 
+                    key={index} 
+                    className="char"
+                    style={{ animationDelay: `${index * 0.05}s` }}
+                  >
+                    {char === ' ' ? '\u00A0' : char}
+                  </span>
+                ))}
+              </h1>
+              <div className="about-typewriter">
+                <Typewriter
+                  options={{
+                    strings: [
+                      dataabout.credentials,
+                      "NYU Tisch & LAMDA",
+                      "International Award-Winning Filmmaker",
+                    ],
+                    autoStart: true,
+                    loop: true,
+                    deleteSpeed: 20,
+                    delay: 60,
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Main Content */}
+        <div className="about-content">
+          <div className="about-section fade-in-section">
+            <h2 className="about-section-title text-fade-in">Background</h2>
+            <p className="about-text text-fade-in">{dataabout.aboutme}</p>
+          </div>
+
+          <div className="about-section fade-in-section">
+            <h2 className="about-section-title text-fade-in">Recognition & Impact</h2>
+            <p className="about-text text-fade-in">{dataabout.experience}</p>
+          </div>
+
+          <div className="about-section fade-in-section">
+            <h2 className="about-section-title text-fade-in">Teaching Philosophy</h2>
+            <p className="about-text text-fade-in">{dataabout.philosophy}</p>
+          </div>
+        </div>
+
+        {/* Filmography Section - Horizontal Scrolling */}
+        <div className="filmography-section">
+          <div className="filmography-content">
+            <h2 className="section-title fade-in-section text-fade-in">Filmography</h2>
+            
+            <div className="filmography-carousel-wrapper">
+              {/* Previous Arrow */}
+              <button 
+                className="carousel-arrow carousel-arrow-prev"
+                onClick={handlePrevFilm}
+                aria-label="Previous film"
+              >
+                ‹
+              </button>
+
+              <div 
+                className="filmography-carousel"
+                ref={filmScrollRef}
+                onMouseEnter={() => setIsHovering(true)}
+                onMouseLeave={() => setIsHovering(false)}
+              >
+                <div className="filmography-track">
+                  {filmography.map((film, index) => (
+                    <div key={index} className="film-slide">
+                      <div className="film-details">
+                        <h3 className="film-title">{film.title}</h3>
+                        <p className="film-role">{film.role}</p>
+                        <p className="film-description">{film.description}</p>
+                      </div>
+                      <div className="film-video">
+                        <iframe
+                          src={film.videoUrl}
+                          title={film.title}
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        ></iframe>
+                      </div>
                     </div>
-                  </div>
+                  ))}
                 </div>
-              );
-            })}
-          </Col>
-        </Row>
-        <Row className="sec_sp">
-          <Col lang="5">
-            <h3 className="color_sec py-4">services</h3>
-          </Col>
-          <Col lg="7">
-            {services.map((data, i) => {
-              return (
-                <div className="service_ py-4" key={i}>
-                  <h5 className="service__title">{data.title}</h5>
-                  <p className="service_desc">{data.description}</p>
-                </div>
-              );
-            })}
-          </Col>
-        </Row>
-      </Container>
+              </div>
+
+              {/* Next Arrow */}
+              <button 
+                className="carousel-arrow carousel-arrow-next"
+                onClick={handleNextFilm}
+                aria-label="Next film"
+              >
+                ›
+              </button>
+            </div>
+
+            {/* Navigation Dots */}
+            <div className="filmography-dots">
+              {filmography.map((_, index) => (
+                <button
+                  key={index}
+                  className={`film-dot ${index === currentFilmIndex ? 'active' : ''}`}
+                  onClick={() => handleFilmClick(index)}
+                  aria-label={`View film ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Accolades Section */}
+        <div 
+          className="accolades-section"
+          style={{
+            backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), url(https://vczctsjopkmmumlbmuzy.supabase.co/storage/v1/object/public/website/afar.png)`
+          }}
+        >
+          <div className="accolades-content">
+            <h2 className="section-title fade-in-section text-fade-in">Accolades</h2>
+            <ul className="accolades-list">
+              {accolades.map((accolade, index) => (
+                <li key={index} className="accolade-item fade-in-section card-animate">
+                  <span className="accolade-award">{accolade.award}</span>
+                  <span className="accolade-festival">{accolade.festival}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* CTA Buttons */}
+        <div className="about-cta fade-in-section">
+          <Link to="/resume" className="btn-primary btn-animate">
+            See Resume
+          </Link>
+          <a 
+            href="https://www.linkedin.com/in/aryan-bhattacharjee/details/education/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="btn-secondary btn-animate"
+          >
+            View LinkedIn
+          </a>
+        </div>
+      </div>
     </HelmetProvider>
   );
 };

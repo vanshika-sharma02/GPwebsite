@@ -7,13 +7,20 @@ import {
 import withRouter from "../hooks/withRouter";
 import AppRoutes from "./routes";
 import Headermain from "../header";
+import { Footer } from "../components/footer";
 import AnimatedCursor  from "../hooks/AnimatedCursor";
 import "./App.css";
+import "../scrollAnimations.css";
+import scrollAnimations from "../scrollAnimation.js";
 
 function _ScrollToTop(props) {
   const { pathname } = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
+    // Reinitialize scroll animations after route change
+    setTimeout(() => {
+      scrollAnimations.observeNewElements();
+    }, 100);
   }, [pathname]);
   return props.children;
 }
@@ -35,6 +42,7 @@ export default function App() {
       <ScrollToTop>
         <Headermain />
         <AppRoutes />
+        <Footer />
       </ScrollToTop>
     </Router>
   );

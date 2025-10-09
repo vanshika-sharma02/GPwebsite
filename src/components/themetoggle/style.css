@@ -1,15 +1,64 @@
-.theme_toggler {
-    background: var(--primary-color);
-    z-index: 999999999;
-    left: 10px;
-    background: var(--primary-color);
-    display: flex;
-    height: 50px;
-    align-items: center;
-    padding-left: 10px;
+.theme-toggle {
+  display: flex;
+  align-items: center;
 }
 
-.theme_toggler svg {
-    width: 2em;
-    height: 2em;
+.theme-toggle input[type="checkbox"] {
+  display: none;
+}
+
+.theme-toggle label {
+  cursor: pointer;
+  width: 48px;
+  height: 28px;
+  background-color: var(--text-color-2);
+  display: block;
+  border-radius: 14px;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 0;
+}
+
+.theme-toggle label:hover {
+  background-color: var(--accent-color);
+}
+
+.theme-toggle label::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 24px;
+  height: 24px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle input[type="checkbox"]:checked + label {
+  background-color: var(--accent-color);
+}
+
+.theme-toggle input[type="checkbox"]:checked + label::after {
+  left: calc(100% - 26px);
+}
+
+/* Icon states (optional enhancement) */
+.theme-toggle label::before {
+  content: '☀️';
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.75rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.theme-toggle input[type="checkbox"]:checked + label::before {
+  content: '🌙';
+  left: 6px;
+  right: auto;
+  opacity: 1;
 }

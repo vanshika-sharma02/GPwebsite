@@ -1,0 +1,249 @@
+.resume-page {
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+/* Header */
+.resume-header {
+  padding: 119px 34px 68px;
+  background-color: #fafafa;
+  border-bottom: 1px solid #e5e5e5;
+  text-align: center;
+}
+
+.resume-header-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.resume-name {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  color: #000000;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.resume-contact {
+  font-size: 1.125rem;
+  color: #666666;
+  margin-bottom: 34px;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease 0.2s forwards;
+}
+
+.btn-back {
+  display: inline-block;
+  padding: 12px 32px;
+  font-size: 0.9375rem;
+  color: #000000;
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease 0.4s forwards;
+}
+
+.btn-back:hover {
+  border-color: #000000;
+  transform: translateX(-4px);
+}
+
+/* Main Content */
+.resume-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 85px 34px;
+}
+
+.resume-section {
+  margin-bottom: 68px;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.resume-section:nth-child(1) { animation-delay: 0.1s; }
+.resume-section:nth-child(2) { animation-delay: 0.2s; }
+.resume-section:nth-child(3) { animation-delay: 0.3s; }
+.resume-section:nth-child(4) { animation-delay: 0.4s; }
+.resume-section:nth-child(5) { animation-delay: 0.5s; }
+
+.resume-section:last-child {
+  margin-bottom: 0;
+}
+
+.section-heading {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 34px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #000000;
+  color: #000000;
+  letter-spacing: -0.01em;
+}
+
+.resume-item {
+  margin-bottom: 51px;
+  padding: 34px;
+  background-color: #fafafa;
+  border-left: 3px solid #e5e5e5;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.resume-item:hover {
+  border-left-color: #000000;
+  transform: translateX(8px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+.resume-item:last-child {
+  margin-bottom: 0;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.item-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 0;
+  color: #000000;
+  flex: 1;
+  min-width: 200px;
+}
+
+.item-date {
+  font-size: 0.9375rem;
+  color: #666666;
+  font-style: italic;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.item-subtitle {
+  font-size: 1rem;
+  color: #000000;
+  margin: 0 0 16px 0;
+  font-weight: 400;
+}
+
+.item-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item-list li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #333333;
+}
+
+.item-list li:last-child {
+  margin-bottom: 0;
+}
+
+.item-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: #000000;
+  font-weight: 500;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .resume-header {
+    padding: 102px 24px 51px;
+  }
+
+  .resume-content {
+    padding: 68px 24px;
+  }
+
+  .resume-section {
+    margin-bottom: 51px;
+  }
+
+  .section-heading {
+    font-size: 1.75rem;
+    margin-bottom: 27px;
+  }
+
+  .resume-item {
+    margin-bottom: 34px;
+    padding: 24px;
+  }
+
+  .item-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .item-title {
+    font-size: 1.125rem;
+  }
+
+  .item-date {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .resume-header {
+    padding: 85px 20px 34px;
+  }
+
+  .resume-name {
+    font-size: 2rem;
+  }
+
+  .resume-contact {
+    font-size: 1rem;
+    margin-bottom: 24px;
+  }
+
+  .resume-content {
+    padding: 51px 20px;
+  }
+
+  .section-heading {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .resume-item {
+    padding: 20px;
+  }
+
+  .item-list li {
+    font-size: 0.9375rem;
+  }
+}

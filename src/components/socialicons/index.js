@@ -10,7 +10,8 @@ import {
   FaInstagram,
   FaSnapchatGhost,
   FaTiktok,
-  FaCircle
+  FaCircle,
+  FaWhatsapp
 } from "react-icons/fa";
 import { socialprofils } from "../../content_option";
 
@@ -24,7 +25,8 @@ const ICON_MAPPING = {
   tiktok: FaTiktok,
   twitter: FaTwitter,
   twitch: FaTwitch,
-  youtube: FaYoutube
+  youtube: FaYoutube,
+  whatsapp: FaWhatsapp
 };
 
 export const Socialicons = (params) => {

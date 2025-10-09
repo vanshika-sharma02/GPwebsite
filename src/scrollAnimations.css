@@ -1,0 +1,210 @@
+/* Scroll Animation System */
+
+/* Fade in animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Base animation classes */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in-scale {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide-in-up {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animated classes */
+.fade-in-section.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-left.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in-right.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in-scale.animate {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.slide-in-up.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered animations */
+.fade-in-section.animate:nth-child(1) { animation-delay: 0.1s; }
+.fade-in-section.animate:nth-child(2) { animation-delay: 0.2s; }
+.fade-in-section.animate:nth-child(3) { animation-delay: 0.3s; }
+.fade-in-section.animate:nth-child(4) { animation-delay: 0.4s; }
+.fade-in-section.animate:nth-child(5) { animation-delay: 0.5s; }
+
+/* Text animation classes */
+.text-fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.text-fade-in.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Button animations */
+.btn-animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-animate.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Card animations */
+.card-animate {
+  opacity: 0;
+  transform: translateY(60px) scale(0.95);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-animate.animate {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Image animations */
+.image-animate {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-animate.animate {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Smooth scroll enhancement */
+.smooth-scroll {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+/* Parallax effect */
+.parallax-element {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-section,
+  .fade-in-left,
+  .fade-in-right,
+  .fade-in-scale,
+  .slide-in-up,
+  .text-fade-in,
+  .btn-animate,
+  .card-animate,
+  .image-animate {
+    transition: none;
+    animation: none;
+  }
+  
+  .fade-in-section.animate,
+  .fade-in-left.animate,
+  .fade-in-right.animate,
+  .fade-in-scale.animate,
+  .slide-in-up.animate,
+  .text-fade-in.animate,
+  .btn-animate.animate,
+  .card-animate.animate,
+  .image-animate.animate {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,86 +1,102 @@
 .stick_follow_icon {
-    top: 50%;
-    left: 30px;
-    width: 20px;
-    height: 200px;
-    position: fixed;
-    margin-top: -100px;
+  position: fixed;
+  left: 32px;
+  bottom: 32px;
+  z-index: 9999;
+  display: none; /* Hidden for minimal design */
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
 }
 
 .stick_follow_icon ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.stick_follow_icon svg {
-    width: 1.3em;
-    height: 1.3em;
-    fill: var(--text-color)
-}
-
-.stick_follow_icon p {
-    top: 70px;
-    left: -24px;
-    width: 68px;
-    height: 20px;
-    color: var(--text-color);
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 1.2;
-    white-space: nowrap;
-    position: relative;
-    transform: rotate( -90deg);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: var(--card-bg);
+  border-radius: 24px;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
 }
 
 .stick_follow_icon ul li {
-    display: block;
-    font-size: 12px;
-    text-align: center;
-    margin-bottom: 10px;
-    transition: all .3s;
+  opacity: 0;
+  animation: fadeInUp 0.4s ease forwards;
 }
 
-.stick_follow_icon p:after {
-    top: 9px;
-    right: -48px;
+.stick_follow_icon ul li:nth-child(1) { animation-delay: 0.1s; }
+.stick_follow_icon ul li:nth-child(2) { animation-delay: 0.2s; }
+.stick_follow_icon ul li:nth-child(3) { animation-delay: 0.3s; }
+.stick_follow_icon ul li:nth-child(4) { animation-delay: 0.4s; }
+
+.stick_follow_icon ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  color: var(--text-color);
+  font-size: 1.25rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: transparent;
+}
+
+.stick_follow_icon ul li a:hover {
+  background-color: var(--accent-color);
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.stick_follow_icon p {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-color-2);
+  margin: 0;
+  padding: 12px 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stick_follow_icon {
+    left: 16px;
+    bottom: 16px;
+    gap: 8px;
+  }
+
+  .stick_follow_icon ul {
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .stick_follow_icon ul li a {
     width: 40px;
-    height: 1px;
-    content: "";
-    display: block;
-    position: absolute;
-    background-color: var(--text-color);
-}
+    height: 40px;
+    font-size: 1.125rem;
+  }
 
-@media only screen and (max-width: 991px) {
-    .stick_follow_icon {
-        width: unset;
-        height: unset;
-        position: static;
-        margin-top: unset;
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: center;
-        padding: 40px 0;
-        align-items: center;
-    }
-    .stick_follow_icon p {
-        top: unset;
-        left: unset;
-        width: unset;
-        height: unset;
-        white-space: nowrap;
-        position: relative;
-        transform: unset;
-        font-size: 17px;
-        margin-right: 65px;
-    }
-    .stick_follow_icon ul {
-        margin-bottom: 20px;
-    }
-    .stick_follow_icon ul li {
-        display: inline;
-        margin-bottom: 29px;
-        margin-right: 10px;
-    }
+  .stick_follow_icon p {
+    font-size: 0.625rem;
+    padding: 8px 0;
+  }
 }
