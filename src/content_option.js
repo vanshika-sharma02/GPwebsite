@@ -18,37 +18,37 @@ const introdata = {
 };
 
 const workshopIntro = {
-    title: "Scriptwriting Intensive",
+    title: "Acting Workshop",
     subtitle: "Led by Aryan Bhattacharjee",
     animated: {
-        first: "From concept to screen-ready script",
+        first: "From technique to authentic performance",
         second: "Master the craft in 6 days",
-        third: "Chance to produce your film",
+        third: "Build your actor's toolkit",
     },
-    description: "A 6-day intensive workshop designed to transform your story ideas into polished, industry-standard screenplays. Live on Zoom, limited to 25 seats.",
+    description: "An immersive, six-day journey into the craft of performance—where theatre discipline meets cinematic realism. Live on Zoom, limited to 25 seats.",
     details: "₹12,500 · 6 Days · Live on Zoom · Limited to 25 seats · Enrollment due by October 25th, 2025",
     essence: [
-        "Clear session deliverables",
-        "Industry-standard format",
-        "AI tools access",
-        "Production opportunity"
+        "Build technique through voice, movement, and imagination",
+        "Learn to perform for both stage and camera",
+        "Experience scene work, monologues, and improvisation",
+        "Receive personal feedback and direction on your performance",
+        "Discover how to translate your art into film, theatre, and digital storytelling"
     ],
     aiSection: {
-        title: "The Future of Storytelling",
-        subtitle: "Special section on AI in Scriptwriting",
+        title: "The Future of Acting",
+        subtitle: "Special Section on AI & the Actor's Process",
         features: [
-            "A focused session on current AI tools for pre-production, lookbooks, and sound ideation",
-            "Access to exclusive AI scriptwriting software for the cohort",
-            "Ethical, creative use-cases to elevate story and craft"
+            "How actors can use AI for self-study: analyzing rhythm, expression, and pacing",
+            "Tools for virtual rehearsals and voice analysis",
+            "Why AI can never replace the human impulse—and how to use it consciously"
         ]
     },
     outcomes: [
-        "Logline + one-page treatment in industry-standard format",
-        "Two character bios + one-page world document",
-        "Script outline + one fully scripted scene (properly formatted)",
-        "First full draft of a short screenplay (5–10 pages)",
-        "Revised screenplay draft (industry-standard format)",
-        "Final screenplay (5–10 pages) + pitch packet (PDF)"
+        "A recorded monologue for portfolio or audition use",
+        "One theatre scene performed live in class",
+        "Practical voice and movement exercises for daily use",
+        "A personalized actor's toolkit for film and stage",
+        "Certificate of completion"
     ]
 };
 
@@ -125,69 +125,64 @@ const filmography = [
 const curriculum = [
     {
         day: "Day 1",
-        title: "Concept, Theme & Logline",
+        title: "Foundations: Voice, Body & Breath",
         topics: [
-            "Identifying narrative premise vs. theme",
-            "Distinguishing between dramatic question and controlling idea",
-            "Constructing a logline with protagonist, goal, stakes, and obstacle",
-            "Formatting a one-page treatment: hook, escalation, resolution"
+            "Alignment, grounding, and breath as instruments of truth",
+            "Awakening the body: movement, tension, and rhythm",
+            "Projection and presence for both stage and camera"
         ],
-        deliverable: "Logline + 1-page treatment (formatted to industry standard)"
+        deliverable: "Personal warm-up routine (voice + body recording)"
     },
     {
         day: "Day 2",
-        title: "Character Architecture & World-Building",
+        title: "Emotion & Imagination",
         topics: [
-            "Protagonist construction: external goal, internal need, fatal flaw",
-            "Antagonistic force vs. central conflict",
-            "Compression of arcs for shorts (5–10 pages vs. feature length)",
-            "World-building as limitation: writing for budget and location"
+            "Unlocking emotional authenticity through sensory memory",
+            "Working with imagination: creating inner landscapes",
+            "Improvisation and \"the given circumstance\""
         ],
-        deliverable: "Two character bios + one-page world document"
+        deliverable: "Recorded emotional improvisation exercise"
     },
     {
         day: "Day 3",
-        title: "Structure & Scene Design",
+        title: "Character & Text",
         topics: [
-            "Short film structure: Setup (pg.1–2), Complication (pg.3–6), Resolution (pg.7–10)",
-            "Crafting the inciting incident within 1–2 pages",
-            "Designing scene beats: objective, conflict, reversal",
-            "Scene transitions: smash cut, match cut, hard cut"
+            "Finding the objective, obstacle, and action",
+            "Working with Shakespeare and contemporary scripts",
+            "Subtext and rhythm in classical vs modern dialogue"
         ],
-        deliverable: "Script outline + one fully scripted scene (properly formatted)"
+        deliverable: "Short text performance (monologue or dialogue)"
     },
     {
         day: "Day 4",
-        title: "Screenwriting Technique: Action, Dialogue & Visuals",
+        title: "Scene Work & Partner Dynamics",
         topics: [
-            "Formatting conventions (slug lines, action lines, parentheticals)",
-            "Writing action lines as cinematic directions, not prose",
-            "Dialogue economy: subtext, rhythm, omission",
-            "Visual motifs and foreshadowing as written devices"
+            "Listening, reacting, and playing moment-to-moment",
+            "Scene objectives and emotional timing",
+            "Adapting stage work for the camera lens"
         ],
-        deliverable: "First full draft of short screenplay (5–10 pages, in screenplay format)"
+        deliverable: "Partner scene performance (1–2 min)"
     },
     {
         day: "Day 5",
-        title: "Script Workshop & Rewrite",
+        title: "Refinement & Direction",
         topics: [
-            "Script table read (selected participants)",
-            "Line editing: cutting redundancy, tightening pacing",
-            "Dialogue polish: from on-the-nose to subtext-driven",
-            "Rewriting strategies: macro pass (structure) vs. micro pass (line-level)"
+            "Rehearsal techniques: beats, tempo, and physical score",
+            "Notes and redirection: performing under guidance",
+            "Playback analysis and emotional continuity"
         ],
-        deliverable: "Revised screenplay draft (industry-standard format)"
+        deliverable: "Revised monologue or scene (recorded)"
     },
     {
         day: "Day 6",
-        title: "Packaging & Path to Screen",
+        title: "The Performer's Path",
         topics: [
-            "Assembling a pitch packet: logline, synopsis, director's note, visual lookbook",
-            "Scheduling and budgeting for shorts (script breakdown basics)",
-            "Distribution strategy: festival submission calendars vs. digital release",
-            "AI in Film: Pre-visualization, beat-boarding, automated lookbooks"
+            "Building a reel: theatre + film",
+            "Self-taping and auditioning with intent",
+            "Understanding the performer's dharma: integrity, repetition, growth",
+            "Future of acting in a world of AI and virtual stages"
         ],
-        deliverable: "Final screenplay (5–10 pages) + pitch packet (PDF)"
+        deliverable: "Final monologue + certificate + personalized feedback"
     }
 ];
 
@@ -211,10 +206,10 @@ const studioOfferings = [
 ];
 
 const highlights = [
-    "Clear session deliverables",
-    "Industry-standard format",
-    "AI tools access",
-    "Production opportunity"
+    "Build technique through voice, movement, and imagination",
+    "Learn to perform for both stage and camera",
+    "Experience scene work, monologues, and improvisation",
+    "Receive personal feedback and direction on your performance"
 ];
 
 const schedule = {
@@ -227,20 +222,28 @@ const schedule = {
 
 const faqs = [
     {
-        question: "Is this beginner friendly?",
-        answer: "Yes. Designed for newcomers and useful for early-career scriptwriters."
+        question: "Beginner friendly?",
+        answer: "Yes. Open to actors, performers, and storytellers at all levels."
     },
     {
-        question: "Will I receive feedback?",
-        answer: "Live critique during sessions plus one office hour for personal notes."
+        question: "Focus area?",
+        answer: "Acting for theatre and film, with equal attention to both."
     },
     {
-        question: "Do I get a certificate?",
-        answer: "Certificate upon completing all assignments."
+        question: "Feedback?",
+        answer: "Live critiques and individual direction during class."
     },
     {
-        question: "What if I miss a day?",
+        question: "Certificate?",
+        answer: "Provided upon completion."
+    },
+    {
+        question: "Missed a day?",
         answer: "Recordings available for 7 days after each session."
+    },
+    {
+        question: "Questions?",
+        answer: "WhatsApp +19175440203"
     }
 ];
 
@@ -260,7 +263,7 @@ const socialprofils = {
     instagram: "https://instagram.com/gitanjaliproductions",
 };
 
-const workshopCurriculumDescription = "We've designed a curriculum where each filmmaker learns to create autonomously by making creative decisions in real time, guided by story, structure, and cinematic awareness.";
+const workshopCurriculumDescription = "We've designed a curriculum where each performer learns to create authentically by making bold choices in real time, guided by technique, truth, and emotional awareness.";
 
 const enrollmentLink = "https://rzp.io/rzp/j0HQ2uym";
 

@@ -299,7 +299,7 @@ export const Portfolio = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   rows="4"
-                  placeholder="Share a bit about your background and interest in screenwriting..."
+                  placeholder="Share a bit about your background and interest in acting..."
                   disabled={isSubmitting}
                 ></textarea>
               </div>
