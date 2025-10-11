@@ -478,103 +478,211 @@
 @media (max-width: 968px) {
   .hero-section {
     min-height: 80vh;
-    padding: 0 20px;
+    padding: 0 5vw;
     background-attachment: scroll;
+    background-size: cover;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    padding: 0 2vw;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 4rem);
+    margin-bottom: clamp(20px, 4vw, 32px);
+  }
+
+  .hero-animated {
+    font-size: clamp(1.25rem, 4vw, 2rem);
+    margin-bottom: clamp(30px, 6vw, 48px);
+    min-height: clamp(60px, 10vw, 80px);
+  }
+
+  .hero-description {
+    font-size: clamp(0.9rem, 3vw, 1.125rem);
+    max-width: 100%;
   }
 
   .mission-section {
-    padding: 85px 20px;
+    padding: clamp(60px, 12vw, 85px) 5vw;
+  }
+
+  .mission-text {
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    margin-bottom: clamp(40px, 8vw, 68px);
   }
 
   .mission-pillars {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: clamp(20px, 4vw, 24px);
   }
 
   .pillar-item {
-    padding: 34px 24px;
+    padding: clamp(24px, 5vw, 34px);
+  }
+
+  .pillar-title {
+    font-size: clamp(1.25rem, 4vw, 1.75rem);
+  }
+
+  .pillar-text {
+    font-size: clamp(0.9rem, 2.5vw, 1.0625rem);
   }
 
   .process-section {
-    padding: 85px 20px;
+    padding: clamp(60px, 12vw, 85px) 5vw;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 6vw, 3rem);
+    margin-bottom: clamp(40px, 8vw, 85px);
   }
 
   .process-timeline {
-    padding-left: 40px;
+    padding-left: clamp(30px, 6vw, 40px);
   }
 
   .process-step {
-    margin-bottom: 51px;
+    margin-bottom: clamp(40px, 8vw, 51px);
   }
 
   .step-content {
-    padding: 24px;
+    padding: clamp(20px, 4vw, 24px);
     grid-template-columns: 50px 1fr;
-    gap: 16px;
+    gap: clamp(12px, 3vw, 16px);
   }
 
   .step-number {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+  }
+
+  .step-title {
+    font-size: clamp(1.125rem, 3vw, 1.5rem);
+  }
+
+  .step-description {
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
   }
 
   .cta-section {
-    padding: 102px 20px;
+    padding: clamp(80px, 15vw, 102px) 5vw;
+  }
+
+  .cta-title {
+    font-size: clamp(1.25rem, 4vw, 2rem);
+    margin-bottom: clamp(30px, 6vw, 51px);
   }
 
   .cta-buttons {
     flex-direction: column;
     align-items: center;
+    gap: clamp(16px, 3vw, 24px);
   }
 
   .btn-primary,
   .btn-secondary {
     width: 100%;
-    max-width: 300px;
+    max-width: clamp(280px, 60vw, 350px);
+    padding: clamp(16px, 3vw, 20px) clamp(32px, 6vw, 48px);
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
   }
 }
 
 @media (max-width: 768px) {
   .hero-section {
     min-height: 70vh;
+    padding: 0 4vw;
+  }
+
+  .hero-content {
+    padding: 0 1vw;
+  }
+
+  .hero-title {
+    font-size: clamp(1.75rem, 9vw, 3.5rem);
+    margin-bottom: clamp(16px, 4vw, 24px);
   }
 
   .hero-animated {
-    font-size: 1.25rem;
-    min-height: 51px;
+    font-size: clamp(1rem, 4.5vw, 1.5rem);
+    min-height: clamp(40px, 8vw, 60px);
+    margin-bottom: clamp(24px, 5vw, 40px);
+  }
+
+  .hero-description {
+    font-size: clamp(0.875rem, 3.5vw, 1rem);
   }
 
   .mission-section {
-    padding: 68px 20px;
+    padding: clamp(50px, 10vw, 68px) 4vw;
   }
 
   .mission-text {
-    font-size: 1.125rem;
-    margin-bottom: 51px;
+    font-size: clamp(0.9rem, 3.5vw, 1.125rem);
+    margin-bottom: clamp(35px, 7vw, 51px);
   }
 
   .mission-pillars {
-    margin-top: 51px;
+    margin-top: clamp(35px, 7vw, 51px);
+    gap: clamp(16px, 3vw, 20px);
+  }
+
+  .pillar-item {
+    padding: clamp(20px, 4vw, 28px);
+  }
+
+  .pillar-title {
+    font-size: clamp(1.125rem, 4vw, 1.5rem);
+  }
+
+  .pillar-text {
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
   }
 
   .process-section {
-    padding: 68px 20px;
+    padding: clamp(50px, 10vw, 68px) 4vw;
   }
 
   .section-title {
-    margin-bottom: 51px;
+    font-size: clamp(1.75rem, 6vw, 2.5rem);
+    margin-bottom: clamp(35px, 7vw, 51px);
+  }
+
+  .process-timeline {
+    padding-left: clamp(25px, 5vw, 35px);
   }
 
   .step-content {
     grid-template-columns: 1fr;
-    padding: 20px;
+    padding: clamp(16px, 3vw, 20px);
+    gap: clamp(8px, 2vw, 12px);
   }
 
   .step-number {
-    font-size: 2rem;
-    margin-bottom: 12px;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin-bottom: clamp(8px, 2vw, 12px);
+  }
+
+  .step-title {
+    font-size: clamp(1rem, 3vw, 1.25rem);
+  }
+
+  .step-description {
+    font-size: clamp(0.8rem, 2.5vw, 0.9rem);
   }
 
   .cta-section {
-    padding: 85px 20px;
+    padding: clamp(60px, 12vw, 85px) 4vw;
+  }
+
+  .cta-title {
+    font-size: clamp(1.125rem, 4vw, 1.75rem);
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: clamp(14px, 3vw, 18px) clamp(28px, 6vw, 40px);
+    font-size: clamp(0.875rem, 2.5vw, 0.95rem);
   }
 }
