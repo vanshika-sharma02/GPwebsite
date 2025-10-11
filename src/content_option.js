@@ -99,25 +99,25 @@ const filmography = [
     {
         title: "Children Of the Sea",
         videoUrl: "https://www.youtube.com/embed/RvieQZfH3GQ",
-        role: "Writer & Director",
+        role: "Actor, Writer & Director",
         description: "Set along the coastlines of Eastern India, the film follows two fishermen and their children whose lives intersect in a fragile moment between livelihood and loss. A quiet meditation on inheritance, ecological collapse, and the intimacy of survival."
     },
     {
         title: "Immortal",
         videoUrl: "https://www.youtube.com/embed/pt0qIBZlLhM",
-        role: "Writer, Director & Editor",
+        role: "Actor, Writer, Director & Editor",
         description: "A young pianist grieving his mother's death discovers that art can bridge the space between the living and the departed. A story of memory, music, and the eternal echo of love."
     },
     {
         title: "One Wayward Honk",
         videoUrl: "https://www.youtube.com/embed/a0K_K1waqC4",
-        role: "Writer, Director & Editor",
+        role: "Actor, Writer, Director & Editor",
         description: "An aging poet, disillusioned and alone, drifts through a surreal day of encounters that force him to confront meaning, absurdity, and the weight of time. A study in silence and creation."
     },
     {
         title: "Afar",
         videoUrl: "https://www.youtube.com/embed/cnpskn3kNSg",
-        role: "Writer & Director",
+        role: "Actor, Writer & Director",
         description: "Two estranged friends, on two sides of a phone call, attempt to thwart the ghosts of past that dwell between them."
     }
 ];

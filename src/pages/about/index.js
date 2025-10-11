@@ -30,7 +30,7 @@ export const About = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Auto-scroll filmography every 1 second
+  // Auto-scroll filmography every 1.75 seconds
   useEffect(() => {
     if (isHovering) return; // Don't auto-scroll when hovering
 
@@ -38,7 +38,7 @@ export const About = () => {
       setCurrentFilmIndex((prevIndex) => 
         prevIndex === filmography.length - 1 ? 0 : prevIndex + 1
       );
-    }, 1000);
+    }, 1750);
 
     return () => clearInterval(interval);
   }, [isHovering]);
