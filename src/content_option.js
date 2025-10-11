@@ -18,7 +18,7 @@ const introdata = {
 };
 
 const workshopIntro = {
-    title: "Acting Workshop",
+    title: "Acting Intensive",
     subtitle: "Led by Aryan Bhattacharjee",
     animated: {
         first: "From technique to authentic performance",
@@ -54,10 +54,10 @@ const workshopIntro = {
 
 const dataabout = {
     title: "About Aryan",
-    aboutme: "Aryan Bhattacharjee is a filmmaker, educator, and creative founder who blends global cinematic craft with deep-rooted Indian storytelling traditions. A graduate of NYU Tisch with specialized training at LAMDA (London) and The Doon School, his background unites philosophical inquiry, collaborative arts, and technical mastery.",
-    credentials: "NYU Tisch & LAMDA | International Award-Winning Filmmaker | Faculty, NYU & HIAL Film School",
-    experience: "His films have earned international acclaim—including honors at the Tokyo International Film Festival and the World Film Carnival, Singapore—for their evocative storytelling and innovative fusion of mythic and modern realism. As faculty at NYU and HIAL Film School, Aryan nurtures original voices while making advanced filmcraft accessible to emerging creators.",
-    philosophy: "His teaching approach is cinematic, refined, and exclusive—transforming each workshop into an immersive, craft-driven journey from story inception to screen-ready script. His projects stream globally on YouTube, and he leads creative ventures like Relay Stories and Gitanjali Productions that focus on impactful content.",
+    aboutme: "Aryan Bhattacharjee is a filmmaker, theatre director, and educator who bridges classical performance with contemporary cinematic craft. A graduate of NYU Tisch with specialized acting and directing training from LAMDA (London) and The Doon School, Aryan's artistic foundation spans both stage and screen. He has directed and performed in plays across New York, the Edinburgh Fringe Festival, and India, bringing together the rigor of Shakespearean theatre with the realism of modern film acting.",
+    credentials: "NYU Tisch & LAMDA | International Award-Winning Filmmaker | Instructor, NYU & HIAL Film School",
+    experience: "Aryan's work has received international acclaim—from the Tokyo International Film Festival to the World Film Carnival, Singapore—for its deep focus on performance and emotional truth. His stage productions have been lauded for their discipline and inventiveness, while his films are recognized for actor-centered storytelling and the fusion of mythic Indian philosophy with modern realism. As instructor at NYU and HIAL Film School, he mentors emerging performers and directors, helping them find authenticity through craft, intuition, and presence.",
+    philosophy: "Aryan's teaching blends the precision of theatre training with the sensitivity of film direction. His workshops are immersive, experiential journeys into the actor's instrument—voice, body, imagination, and truth. Each session emphasizes awareness, connection, and disciplined exploration, guiding students to find stillness in chaos and life in text. He leads creative ventures like Relay Stories and Gitanjali Productions, both dedicated to nurturing original voices and meaningful performances that transcend medium and genre.",
 };
 
 const accolades = [
@@ -230,12 +230,12 @@ const faqs = [
         answer: "Acting for theatre and film, with equal attention to both."
     },
     {
-        question: "Feedback?",
-        answer: "Live critiques and individual direction during class."
+        question: "Will I receive feedback?",
+        answer: "Live critique during sessions plus one office hour for personal notes."
     },
     {
-        question: "Certificate?",
-        answer: "Provided upon completion."
+        question: "Do I get a certificate?",
+        answer: "Certificate upon completing all assignments."
     },
     {
         question: "Missed a day?",
