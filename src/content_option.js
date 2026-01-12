@@ -25,7 +25,7 @@ const workshopIntro = {
         second: "Master the craft in 6 days",
         third: "Build your actor's toolkit",
     },
-    description: "An immersive, six-day journey into the craft of performance—where theatre discipline meets cinematic realism. Live on Zoom, limited to 25 seats.",
+    description: "An immersive, six-day journey into the craft of performance, where theatre discipline meets cinematic realism. Live on Zoom, limited to 25 seats.",
     details: "₹12,500 · 6 Days · Live on Zoom · Limited to 25 seats · Enrollment due by October 25th, 2025",
     essence: [
         "Build technique through voice, movement, and imagination",
@@ -40,7 +40,7 @@ const workshopIntro = {
         features: [
             "How actors can use AI for self-study: analyzing rhythm, expression, and pacing",
             "Tools for virtual rehearsals and voice analysis",
-            "Why AI can never replace the human impulse—and how to use it consciously"
+            "Why AI can never replace the human impulse, and how to use it consciously"
         ]
     },
     outcomes: [
@@ -56,8 +56,8 @@ const dataabout = {
     title: "About Aryan",
     aboutme: "Aryan Wangchuck is a filmmaker, theatre director, and educator who bridges classical performance with contemporary cinematic craft. A graduate of NYU Tisch with specialized acting and directing training from LAMDA (London) and The Doon School, Aryan's artistic foundation spans both stage and screen. He has directed and performed in plays across New York, the Edinburgh Fringe Festival, and India, bringing together the rigor of Shakespearean theatre with the realism of modern film acting.",
     credentials: "NYU Tisch & LAMDA | International Award-Winning Filmmaker | Instructor, NYU & HIAL Film School",
-    experience: "Aryan's work has received international acclaim—from the Tokyo International Film Festival to the World Film Carnival, Singapore—for its deep focus on performance and emotional truth. His stage productions have been lauded for their discipline and inventiveness, while his films are recognized for actor-centered storytelling and the fusion of mythic Indian philosophy with modern realism. As instructor at NYU and HIAL Film School, he mentors emerging performers and directors, helping them find authenticity through craft, intuition, and presence.",
-    philosophy: "Aryan's teaching blends the precision of theatre training with the sensitivity of film direction. His workshops are immersive, experiential journeys into the actor's instrument—voice, body, imagination, and truth. Each session emphasizes awareness, connection, and disciplined exploration, guiding students to find stillness in chaos and life in text. He leads creative ventures like Relay Stories and Gitanjali Productions, both dedicated to nurturing original voices and meaningful performances that transcend medium and genre.",
+    experience: "Aryan's work has received international acclaim, from the Tokyo International Film Festival to the World Film Carnival, Singapore, for its deep focus on performance and emotional truth. His stage productions have been lauded for their discipline and inventiveness, while his films are recognized for actor-centered storytelling and the fusion of mythic Indian philosophy with modern realism. As instructor at NYU and HIAL Film School, he mentors emerging performers and directors, helping them find authenticity through craft, intuition, and presence.",
+    philosophy: "Aryan's teaching blends the precision of theatre training with the sensitivity of film direction. His workshops are immersive, experiential journeys into the actor's instrument: voice, body, imagination, and truth. Each session emphasizes awareness, connection, and disciplined exploration, guiding students to find stillness in chaos and life in text. He leads creative ventures like Relay Stories and Gitanjali Productions, both dedicated to nurturing original voices and meaningful performances that transcend medium and genre.",
 };
 
 const accolades = [
@@ -258,8 +258,8 @@ const contactConfig = {
 
 const socialprofils = {
     whatsapp: "https://wa.me/19175440203",
-    linkedin: "https://www.linkedin.com/in/aryan-bhattacharjee/",
-    youtube: "https://youtube.com/@gitanjaliproductions",
+    linkedin: "https://www.linkedin.com/in/aryanwangchuk/",
+    youtube: "https://www.youtube.com/@aryanbhattacharjee4969",
     instagram: "https://www.instagram.com/aryanwangchuk/",
     twitter: "https://x.com/aryanwangchuk",
 };

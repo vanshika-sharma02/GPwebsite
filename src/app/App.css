@@ -141,3 +141,10 @@ textarea:focus {
     scroll-behavior: auto !important;
   }
 }
+
+/* Force instant scroll during page transitions */
+html.scroll-instant,
+html.scroll-instant *,
+html.scroll-instant body {
+  scroll-behavior: auto !important;
+}
