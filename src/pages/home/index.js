@@ -1,18 +1,42 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import Typewriter from "typewriter-effect";
 import { introdata, meta, studioOfferings } from "../../content_option";
 import { Link } from "react-router-dom";
 
+// Image placeholders for feature cards
+const featureImages = [
+  "https://vczctsjopkmmumlbmuzy.supabase.co/storage/v1/object/public/website/1.png",
+  "https://vczctsjopkmmumlbmuzy.supabase.co/storage/v1/object/public/website/2.png",
+  "https://vczctsjopkmmumlbmuzy.supabase.co/storage/v1/object/public/website/3.png",
+  "https://vczctsjopkmmumlbmuzy.supabase.co/storage/v1/object/public/website/4.png"
+];
+
 export const Home = () => {
-  const heroRef = useRef(null);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const scrollRef = useRef(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const checkScrollPosition = () => {
+    if (scrollRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+    }
+  };
+
+  const scrollToDirection = (direction) => {
+    if (scrollRef.current) {
+      const cardWidth = 340; // 320px card + 20px gap
+      const scrollAmount = direction === 'left' ? -cardWidth : cardWidth;
+      scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
 
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
-      rootMargin: "0px 0px -100px 0px"
+      rootMargin: "0px 0px -50px 0px"
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -23,22 +47,21 @@ export const Home = () => {
       });
     }, observerOptions);
 
-    const elements = document.querySelectorAll('.fade-in-section');
+    const elements = document.querySelectorAll('.animate-on-scroll');
     elements.forEach(el => observer.observe(el));
 
-    // Mouse move parallax effect
-    const handleMouseMove = (e) => {
-      setMousePosition({
-        x: (e.clientX / window.innerWidth - 0.5) * 10,
-        y: (e.clientY / window.innerHeight - 0.5) * 10
-      });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
+    // Check scroll position on mount and scroll
+    const scrollContainer = scrollRef.current;
+    if (scrollContainer) {
+      scrollContainer.addEventListener('scroll', checkScrollPosition);
+      checkScrollPosition();
+    }
 
     return () => {
       observer.disconnect();
-      window.removeEventListener('mousemove', handleMouseMove);
+      if (scrollContainer) {
+        scrollContainer.removeEventListener('scroll', checkScrollPosition);
+      }
     };
   }, []);
 
@@ -52,109 +75,97 @@ export const Home = () => {
         </Helmet>
         
         {/* Hero Section with Background Image */}
-                <div 
-                  className="hero-section" 
-                  ref={heroRef}
-                  style={{
-                    backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url(https://vczctsjopkmmumlbmuzy.supabase.co/storage/v1/object/public/website/COTS%20POSTER%20IMAGE.jpeg)`
-                  }}
-                >
-          <div 
-            className="hero-background-layer"
-            style={{
-              transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`
-            }}
-          ></div>
-          <div className="hero-content fade-in-section">
-            <h1 className="hero-title split-text">
-              {introdata.title.split('').map((char, index) => (
-                <span 
-                  key={index} 
-                  className="char"
-                  style={{ animationDelay: `${index * 0.05}s` }}
-                >
-                  {char === ' ' ? '\u00A0' : char}
-                </span>
-              ))}
-            </h1>
-            <div className="hero-animated">
-              <Typewriter
-                options={{
-                  strings: [
-                    introdata.animated.first,
-                    introdata.animated.second,
-                    introdata.animated.third,
-                  ],
-                  autoStart: true,
-                  loop: true,
-                  deleteSpeed: 20,
-                  delay: 60,
-                }}
-              />
-            </div>
-            <p className="hero-description">{introdata.description}</p>
+        <div 
+          className="hero-section"
+          style={{
+            backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url(https://vczctsjopkmmumlbmuzy.supabase.co/storage/v1/object/public/website/COTS%20POSTER%20IMAGE.jpeg)`
+          }}
+        >
+          <div className="hero-content">
+            <h1 className="hero-title animate-on-scroll">{introdata.title}</h1>
+            <p className="hero-tagline animate-on-scroll">{introdata.animated.first}</p>
           </div>
         </div>
 
-        {/* Mission Statement Section */}
-        <div className="mission-section fade-in-section">
-          <div className="mission-content">
-            <h2 className="section-title text-fade-in">Our Mission</h2>
-            <p className="mission-text text-fade-in">
+        {/* Horizontal Scroll Feature Cards */}
+        <div className="features-section">
+          <div className="features-header animate-on-scroll">
+            <span className="features-label">WHAT WE DO</span>
+            <p className="features-description">{introdata.description}</p>
+          </div>
+          
+          <div className="features-wrapper">
+            <div className="features-scroll-container" ref={scrollRef}>
+              <div className="features-scroll-track">
+                {studioOfferings.map((offering, index) => (
+                  <div key={index} className="feature-card animate-on-scroll" style={{ animationDelay: `${index * 0.1}s` }}>
+                    <div className="feature-image-container">
+                      <img 
+                        src={featureImages[index] || featureImages[0]} 
+                        alt={offering.title}
+                        className="feature-image"
+                      />
+                    </div>
+                    <div className="feature-content">
+                      <h3 className="feature-title">{offering.title}</h3>
+                      <p className="feature-description">{offering.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Mission Section */}
+        <div className="mission-section">
+          <div className="mission-content animate-on-scroll">
+            <h2 className="mission-title">Our Mission</h2>
+            <p className="mission-text">
               Gitanjali Productions is dedicated to creating films that explore the ephemeral nature of existence, 
               seeking to capture the essence of life in ways that inspire reflection and growth. Through our work, 
               we aim to bridge the gap between art and humanity, making cinema that resonates on a deeply personal level.
             </p>
-            <div className="mission-pillars">
-              <div className="pillar-item card-animate">
-                <h3 className="pillar-title">Authentic Storytelling</h3>
-                <p className="pillar-text">We believe in stories that reflect genuine human experiences and emotions</p>
-              </div>
-              <div className="pillar-item card-animate">
-                <h3 className="pillar-title">Cultural Bridge</h3>
-                <p className="pillar-text">Blending global cinematic craft with deep-rooted Indian storytelling traditions</p>
-              </div>
-              <div className="pillar-item card-animate">
-                <h3 className="pillar-title">Education First</h3>
-                <p className="pillar-text">Nurturing the next generation of filmmakers through accessible education</p>
-              </div>
+          </div>
+          
+          <div className="mission-pillars">
+            <div className="pillar-card animate-on-scroll">
+              <h3>Authentic Storytelling</h3>
+              <p>We believe in stories that reflect genuine human experiences and emotions</p>
+            </div>
+            <div className="pillar-card animate-on-scroll">
+              <h3>Cultural Bridge</h3>
+              <p>Blending global cinematic craft with deep-rooted Indian storytelling traditions</p>
+            </div>
+            <div className="pillar-card animate-on-scroll">
+              <h3>Education First</h3>
+              <p>Nurturing the next generation of filmmakers through accessible education</p>
             </div>
           </div>
         </div>
 
-        {/* Enhanced Process Section with Integrated Offerings */}
+        {/* Process Media Section with Background */}
         <div 
-          className="process-section fade-in-section"
+          className="process-media-section"
           style={{
-            backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), url(https://vczctsjopkmmumlbmuzy.supabase.co/storage/v1/object/public/website/immortal.png)`
+            backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url(https://vczctsjopkmmumlbmuzy.supabase.co/storage/v1/object/public/website/immortal.png)`
           }}
         >
-          <div className="process-content">
-            <h2 className="section-title text-fade-in">Our Process</h2>
-            <div className="process-timeline">
-              {studioOfferings.map((offering, index) => (
-                <div key={index} className="process-step card-animate" style={{ animationDelay: `${index * 0.15}s` }}>
-                  <div className="step-marker"></div>
-                  <div className="step-content">
-                    <div className="step-number">{String(index + 1).padStart(2, '0')}</div>
-                    <h3 className="step-title">{offering.title}</h3>
-                    <p className="step-description">{offering.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className="process-media-content animate-on-scroll">
+            <h2>From Script to Screen</h2>
+            <p>Every frame tells a story. Every story leaves a mark.</p>
           </div>
         </div>
 
         {/* CTA Section */}
-        <div className="cta-section fade-in-section">
-          <div className="cta-content">
-            <h2 className="cta-title text-fade-in">Ready to tell your story?</h2>
+        <div className="cta-section">
+          <div className="cta-content animate-on-scroll">
+            <h2 className="cta-title">Ready to tell your story?</h2>
             <div className="cta-buttons">
-              <Link to="/about" className="btn-primary btn-animate">
+              <Link to="/about" className="btn-primary">
                 Meet the Founder
               </Link>
-              <Link to="/contact" className="btn-secondary btn-animate">
+              <Link to="/contact" className="btn-secondary">
                 Get in Touch
               </Link>
             </div>

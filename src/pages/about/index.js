@@ -3,7 +3,6 @@ import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { dataabout, accolades, filmography, meta } from "../../content_option";
 import { Link } from "react-router-dom";
-import Typewriter from "typewriter-effect";
 
 export const About = () => {
   const [currentFilmIndex, setCurrentFilmIndex] = useState(0);
@@ -24,21 +23,21 @@ export const About = () => {
       });
     }, observerOptions);
 
-    const elements = document.querySelectorAll('.fade-in-section');
+    const elements = document.querySelectorAll('.animate-on-scroll');
     elements.forEach(el => observer.observe(el));
 
     return () => observer.disconnect();
   }, []);
 
-  // Auto-scroll filmography every 1.75 seconds
+  // Auto-scroll filmography every 4 seconds
   useEffect(() => {
-    if (isHovering) return; // Don't auto-scroll when hovering
+    if (isHovering) return;
 
     const interval = setInterval(() => {
       setCurrentFilmIndex((prevIndex) => 
         prevIndex === filmography.length - 1 ? 0 : prevIndex + 1
       );
-    }, 1750);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, [isHovering]);
@@ -79,165 +78,137 @@ export const About = () => {
           <meta name="description" content={meta.description} />
         </Helmet>
 
-        {/* Hero Section */}
-        <div className="about-hero fade-in-section">
-          <div className="about-hero-content">
-            <div className="about-image-container image-animate">
-              <img 
-                src="https://vczctsjopkmmumlbmuzy.supabase.co/storage/v1/object/public/website/Headshot.jpeg" 
-                alt="Aryan Wangchuck" 
-                className="about-profile-image"
-              />
-            </div>
-            <div className="about-text-container">
-              <h1 className="about-title split-text text-fade-in">
-                {dataabout.title.split('').map((char, index) => (
-                  <span 
-                    key={index} 
-                    className="char"
-                    style={{ animationDelay: `${index * 0.05}s` }}
-                  >
-                    {char === ' ' ? '\u00A0' : char}
-                  </span>
-                ))}
-              </h1>
-              <div className="about-typewriter">
-                <Typewriter
-                  options={{
-                    strings: [
-                      dataabout.credentials,
-                      "NYU Tisch & LAMDA",
-                      "International Award-Winning Filmmaker",
-                    ],
-                    autoStart: true,
-                    loop: true,
-                    deleteSpeed: 20,
-                    delay: 60,
-                  }}
-                />
-              </div>
+        {/* Hero Section - Split Layout */}
+        <div className="about-hero-split">
+          <div className="about-hero-image-side">
+            <img 
+              src="https://vczctsjopkmmumlbmuzy.supabase.co/storage/v1/object/public/website/Headshot.jpeg" 
+              alt="Aryan Wangchuk" 
+              className="about-hero-image"
+            />
+          </div>
+          <div className="about-hero-content-side">
+            <div className="about-hero-content animate-on-scroll">
+              <h1 className="about-title">{dataabout.title}</h1>
+              <p className="about-credentials">{dataabout.credentials}</p>
             </div>
           </div>
         </div>
 
-        {/* Main Content */}
-        <div className="about-content">
-          <div className="about-section fade-in-section">
-            <h2 className="about-section-title text-fade-in">Background</h2>
-            <p className="about-text text-fade-in">{dataabout.aboutme}</p>
-          </div>
+        {/* Bio Sections */}
+        <div className="about-bio-section">
+          <div className="about-bio-content">
+            <div className="bio-block animate-on-scroll">
+              <h2>Background</h2>
+              <p>{dataabout.aboutme}</p>
+            </div>
 
-          <div className="about-section fade-in-section">
-            <h2 className="about-section-title text-fade-in">Recognition & Impact</h2>
-            <p className="about-text text-fade-in">{dataabout.experience}</p>
-          </div>
+            <div className="bio-block animate-on-scroll">
+              <h2>Recognition & Impact</h2>
+              <p>{dataabout.experience}</p>
+            </div>
 
-          <div className="about-section fade-in-section">
-            <h2 className="about-section-title text-fade-in">Teaching Philosophy</h2>
-            <p className="about-text text-fade-in">{dataabout.philosophy}</p>
+            <div className="bio-block animate-on-scroll">
+              <h2>Teaching Philosophy</h2>
+              <p>{dataabout.philosophy}</p>
+            </div>
           </div>
         </div>
 
-        {/* Filmography Section - Horizontal Scrolling */}
+        {/* Filmography Section */}
         <div className="filmography-section">
-          <div className="filmography-content">
-            <h2 className="section-title fade-in-section text-fade-in">Filmography</h2>
-            
-            <div className="filmography-carousel-wrapper">
-              {/* Previous Arrow */}
-              <button 
-                className="carousel-arrow carousel-arrow-prev"
-                onClick={handlePrevFilm}
-                aria-label="Previous film"
-              >
-                ‹
-              </button>
+          <div className="filmography-header animate-on-scroll">
+            <h2>Filmography</h2>
+          </div>
+          
+          <div className="filmography-carousel-wrapper">
+            <button 
+              className="carousel-arrow carousel-arrow-prev"
+              onClick={handlePrevFilm}
+              aria-label="Previous film"
+            >
+              ‹
+            </button>
 
-              <div 
-                className="filmography-carousel"
-                ref={filmScrollRef}
-                onMouseEnter={() => setIsHovering(true)}
-                onMouseLeave={() => setIsHovering(false)}
-              >
-                <div className="filmography-track">
-                  {filmography.map((film, index) => (
-                    <div key={index} className="film-slide">
-                      <div className="film-details">
-                        <h3 className="film-title">{film.title}</h3>
-                        <p className="film-role">{film.role}</p>
-                        <p className="film-description">{film.description}</p>
-                      </div>
-                      <div className="film-video">
-                        <iframe
-                          src={film.videoUrl}
-                          title={film.title}
-                          frameBorder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                        ></iframe>
-                      </div>
+            <div 
+              className="filmography-carousel"
+              ref={filmScrollRef}
+              onMouseEnter={() => setIsHovering(true)}
+              onMouseLeave={() => setIsHovering(false)}
+            >
+              <div className="filmography-track">
+                {filmography.map((film, index) => (
+                  <div key={index} className="film-slide">
+                    <div className="film-video-container">
+                      <iframe
+                        src={film.videoUrl}
+                        title={film.title}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      ></iframe>
                     </div>
-                  ))}
-                </div>
+                    <div className="film-info">
+                      <h3 className="film-title">{film.title}</h3>
+                      <p className="film-role">{film.role}</p>
+                      <p className="film-description">{film.description}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
-
-              {/* Next Arrow */}
-              <button 
-                className="carousel-arrow carousel-arrow-next"
-                onClick={handleNextFilm}
-                aria-label="Next film"
-              >
-                ›
-              </button>
             </div>
 
-            {/* Navigation Dots */}
-            <div className="filmography-dots">
-              {filmography.map((_, index) => (
-                <button
-                  key={index}
-                  className={`film-dot ${index === currentFilmIndex ? 'active' : ''}`}
-                  onClick={() => handleFilmClick(index)}
-                  aria-label={`View film ${index + 1}`}
-                />
-              ))}
-            </div>
+            <button 
+              className="carousel-arrow carousel-arrow-next"
+              onClick={handleNextFilm}
+              aria-label="Next film"
+            >
+              ›
+            </button>
+          </div>
+
+          <div className="filmography-dots">
+            {filmography.map((_, index) => (
+              <button
+                key={index}
+                className={`film-dot ${index === currentFilmIndex ? 'active' : ''}`}
+                onClick={() => handleFilmClick(index)}
+                aria-label={`View film ${index + 1}`}
+              />
+            ))}
           </div>
         </div>
 
         {/* Accolades Section */}
-        <div 
-          className="accolades-section"
-          style={{
-            backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), url(https://vczctsjopkmmumlbmuzy.supabase.co/storage/v1/object/public/website/afar.png)`
-          }}
-        >
-          <div className="accolades-content">
-            <h2 className="section-title fade-in-section text-fade-in">Accolades</h2>
-            <ul className="accolades-list">
-              {accolades.map((accolade, index) => (
-                <li key={index} className="accolade-item fade-in-section card-animate">
-                  <span className="accolade-award">{accolade.award}</span>
-                  <span className="accolade-festival">{accolade.festival}</span>
-                </li>
-              ))}
-            </ul>
+        <div className="accolades-section">
+          <div className="accolades-header animate-on-scroll">
+            <h2>Accolades</h2>
+          </div>
+          <div className="accolades-grid">
+            {accolades.map((accolade, index) => (
+              <div key={index} className="accolade-card animate-on-scroll" style={{ animationDelay: `${index * 0.05}s` }}>
+                <span className="accolade-award">{accolade.award}</span>
+                <span className="accolade-festival">{accolade.festival}</span>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* CTA Buttons */}
-        <div className="about-cta fade-in-section">
-          <Link to="/resume" className="btn-primary btn-animate">
-            See Resume
-          </Link>
-          <a 
-            href="https://www.linkedin.com/in/aryan-bhattacharjee/details/education/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="btn-secondary btn-animate"
-          >
-            View LinkedIn
-          </a>
+        {/* CTA Section */}
+        <div className="about-cta-section">
+          <div className="about-cta-content animate-on-scroll">
+            <Link to="/resume" className="btn-primary">
+              See Resume
+            </Link>
+            <a 
+              href="https://www.linkedin.com/in/aryanwangchuk/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="btn-secondary"
+            >
+              View LinkedIn
+            </a>
+          </div>
         </div>
       </div>
     </HelmetProvider>

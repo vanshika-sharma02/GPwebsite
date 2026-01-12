@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { meta } from "../../content_option";
-import Typewriter from "typewriter-effect";
 
 export const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -25,7 +24,7 @@ export const ContactUs = () => {
       });
     }, observerOptions);
 
-    const elements = document.querySelectorAll('.fade-in-section');
+    const elements = document.querySelectorAll('.animate-on-scroll');
     elements.forEach(el => observer.observe(el));
 
     return () => observer.disconnect();
@@ -47,47 +46,20 @@ export const ContactUs = () => {
 
   return (
     <HelmetProvider>
-      <div 
-        className="contact-page"
-        style={{
-          backgroundImage: `url(https://vczctsjopkmmumlbmuzy.supabase.co/storage/v1/object/public/website/2.png)`
-        }}
-      >
+      <div className="contact-page">
         <Helmet>
           <meta charSet="utf-8" />
           <title>Contact | {meta.title}</title>
           <meta name="description" content="Get in touch with Gitanjali Productions" />
         </Helmet>
 
-        <div className="contact-container">
-          <div className="contact-content fade-in-section">
-            <h1 className="contact-title split-text text-fade-in">
-              {'Get in Touch'.split('').map((char, index) => (
-                <span 
-                  key={index} 
-                  className="char"
-                  style={{ animationDelay: `${index * 0.05}s` }}
-                >
-                  {char === ' ' ? '\u00A0' : char}
-                </span>
-              ))}
-            </h1>
-            <div className="contact-typewriter text-fade-in">
-              <Typewriter
-                options={{
-                  strings: [
-                    "Have a question?",
-                    "Want to work together?",
-                    "Let's create something amazing",
-                  ],
-                  autoStart: true,
-                  loop: true,
-                  deleteSpeed: 20,
-                  delay: 60,
-                }}
-              />
-            </div>
+        <div className="contact-hero animate-on-scroll">
+          <h1 className="contact-title">Get in Touch</h1>
+          <p className="contact-subtitle">Have a question? Want to collaborate? Let's create something amazing.</p>
+        </div>
 
+        <div className="contact-form-section">
+          <div className="contact-form-container animate-on-scroll">
             <form onSubmit={handleSubmit} className="contact-form">
               <div className="form-group">
                 <label htmlFor="name">Name</label>

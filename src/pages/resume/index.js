@@ -11,7 +11,7 @@ export const Resume = () => {
         <Helmet>
           <meta charSet="utf-8" />
           <title>Resume | {meta.title}</title>
-          <meta name="description" content="Aryan Wangchuck's professional resume" />
+          <meta name="description" content="Aryan Wangchuk's professional resume" />
         </Helmet>
 
         {/* Header */}
@@ -19,7 +19,7 @@ export const Resume = () => {
           <div className="resume-header-content">
             <h1 className="resume-name">Aryan Wangchuk</h1>
             <p className="resume-contact">
-              +1 (646) 957-6086 | aryanwangchuck@gmail.com
+              +1 (646) 957-6086 | aryanwangchuk@gmail.com
             </p>
             <Link to="/about" className="btn-back">← Back to About</Link>
           </div>
