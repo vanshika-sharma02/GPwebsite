@@ -97,12 +97,6 @@ const accolades = [
 
 const filmography = [
     {
-        title: "Children Of the Sea",
-        videoUrl: "https://www.youtube.com/embed/RvieQZfH3GQ",
-        role: "Actor, Writer & Director",
-        description: "Set along the coastlines of Eastern India, the film follows two fishermen and their children whose lives intersect in a fragile moment between livelihood and loss. A quiet meditation on inheritance, ecological collapse, and the intimacy of survival."
-    },
-    {
         title: "Immortal",
         videoUrl: "https://www.youtube.com/embed/pt0qIBZlLhM",
         role: "Actor, Writer, Director & Editor",
@@ -119,6 +113,12 @@ const filmography = [
         videoUrl: "https://www.youtube.com/embed/cnpskn3kNSg",
         role: "Actor, Writer & Director",
         description: "Two estranged friends, on two sides of a phone call, attempt to thwart the ghosts of past that dwell between them."
+    },
+    {
+        title: "Children Of the Sea",
+        videoUrl: "https://www.youtube.com/embed/RvieQZfH3GQ",
+        role: "Actor, Writer & Director",
+        description: "Set along the coastlines of Eastern India, the film follows two fishermen and their children whose lives intersect in a fragile moment between livelihood and loss. A quiet meditation on inheritance, ecological collapse, and the intimacy of survival."
     }
 ];
 
