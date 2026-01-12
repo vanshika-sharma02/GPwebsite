@@ -260,7 +260,8 @@ const socialprofils = {
     whatsapp: "https://wa.me/19175440203",
     linkedin: "https://www.linkedin.com/in/aryan-bhattacharjee/",
     youtube: "https://youtube.com/@gitanjaliproductions",
-    instagram: "https://instagram.com/gitanjaliproductions",
+    instagram: "https://www.instagram.com/aryanwangchuk/",
+    twitter: "https://x.com/aryanwangchuk",
 };
 
 const workshopCurriculumDescription = "We've designed a curriculum where each performer learns to create authentically by making bold choices in real time, guided by technique, truth, and emotional awareness.";

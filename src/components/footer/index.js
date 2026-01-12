@@ -25,7 +25,7 @@ export const Footer = () => {
               <FaLinkedinIn />
             </a>
             <a 
-              href={socialprofils.twitter || "https://x.com/gitanjalifilms"} 
+              href={socialprofils.twitter} 
               target="_blank" 
               rel="noopener noreferrer"
               className="footer-social-link"
