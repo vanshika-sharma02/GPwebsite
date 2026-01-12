@@ -85,7 +85,7 @@ export const About = () => {
             <div className="about-image-container image-animate">
               <img 
                 src="https://vczctsjopkmmumlbmuzy.supabase.co/storage/v1/object/public/website/Headshot.jpeg" 
-                alt="Aryan Bhattacharjee" 
+                alt="Aryan Wangchuck" 
                 className="about-profile-image"
               />
             </div>

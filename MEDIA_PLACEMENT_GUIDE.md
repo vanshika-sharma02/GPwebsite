@@ -140,7 +140,7 @@ Add to `/src/pages/about/index.js` after the title:
 <div className="about-image-container">
   <img 
     src="https://your-cdn.com/aryan-profile.jpg"
-    alt="Aryan Bhattacharjee"
+    alt="Aryan Wangchuck"
     className="about-profile-image"
   />
 </div>
@@ -373,7 +373,7 @@ export { mediaUrls };
 import { mediaUrls } from "../../content_option";
 
 // In component:
-<img src={mediaUrls.profilePhoto} alt="Aryan Bhattacharjee" />
+<img src={mediaUrls.profilePhoto} alt="Aryan Wangchuck" />
 ```
 
 ---

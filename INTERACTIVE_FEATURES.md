@@ -300,7 +300,7 @@ Add after hero title in `/src/pages/about/index.js`:
 <div className="about-profile-container">
   <img 
     src="https://your-cdn.com/aryan-profile.jpg"
-    alt="Aryan Bhattacharjee"
+    alt="Aryan Wangchuck"
     className="about-profile-image"
   />
 </div>

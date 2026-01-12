@@ -151,11 +151,11 @@ export const Home = () => {
           <div className="cta-content">
             <h2 className="cta-title text-fade-in">Ready to tell your story?</h2>
             <div className="cta-buttons">
-              <Link to="/portfolio" className="btn-primary btn-animate">
-                Explore Workshop
-              </Link>
-              <Link to="/about" className="btn-secondary btn-animate">
+              <Link to="/about" className="btn-primary btn-animate">
                 Meet the Founder
+              </Link>
+              <Link to="/contact" className="btn-secondary btn-animate">
+                Get in Touch
               </Link>
             </div>
           </div>

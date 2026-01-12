@@ -10,7 +10,7 @@ export const Footer = () => {
       <div className="footer-content">
         <div className="footer-left">
           <p className="footer-text">
-            © 2025 by Aryan Bhattacharjee | aryanb1304@gmail.com | +1(646)400-4636
+            © 2025 by Aryan Wangchuk | aryanwangchuck@gmail.com | +1(646)957-6086
           </p>
         </div>
         <div className="footer-right">

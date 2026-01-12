@@ -12,14 +12,14 @@ const introdata = {
         second: "From Script to Screen",
         third: "Educating the Next Generation",
     },
-    description: "An award-winning film production company and creative education studio founded by Aryan Bhattacharjee. We create impactful content and nurture original voices through advanced filmcraft education.",
+    description: "An award-winning film production company and creative education studio founded by Aryan Wangchuck. We create impactful content and nurture original voices through advanced filmcraft education.",
     details: "International Award-Winning • NYU Tisch & LAMDA • Tokyo Film Festival • World Film Carnival Singapore",
     your_img_url: "https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=2059",
 };
 
 const workshopIntro = {
     title: "Acting Intensive",
-    subtitle: "Led by Aryan Bhattacharjee",
+    subtitle: "Led by Aryan Wangchuck",
     animated: {
         first: "From technique to authentic performance",
         second: "Master the craft in 6 days",
@@ -54,7 +54,7 @@ const workshopIntro = {
 
 const dataabout = {
     title: "About Aryan",
-    aboutme: "Aryan Bhattacharjee is a filmmaker, theatre director, and educator who bridges classical performance with contemporary cinematic craft. A graduate of NYU Tisch with specialized acting and directing training from LAMDA (London) and The Doon School, Aryan's artistic foundation spans both stage and screen. He has directed and performed in plays across New York, the Edinburgh Fringe Festival, and India, bringing together the rigor of Shakespearean theatre with the realism of modern film acting.",
+    aboutme: "Aryan Wangchuck is a filmmaker, theatre director, and educator who bridges classical performance with contemporary cinematic craft. A graduate of NYU Tisch with specialized acting and directing training from LAMDA (London) and The Doon School, Aryan's artistic foundation spans both stage and screen. He has directed and performed in plays across New York, the Edinburgh Fringe Festival, and India, bringing together the rigor of Shakespearean theatre with the realism of modern film acting.",
     credentials: "NYU Tisch & LAMDA | International Award-Winning Filmmaker | Instructor, NYU & HIAL Film School",
     experience: "Aryan's work has received international acclaim—from the Tokyo International Film Festival to the World Film Carnival, Singapore—for its deep focus on performance and emotional truth. His stage productions have been lauded for their discipline and inventiveness, while his films are recognized for actor-centered storytelling and the fusion of mythic Indian philosophy with modern realism. As instructor at NYU and HIAL Film School, he mentors emerging performers and directors, helping them find authenticity through craft, intuition, and presence.",
     philosophy: "Aryan's teaching blends the precision of theatre training with the sensitivity of film direction. His workshops are immersive, experiential journeys into the actor's instrument—voice, body, imagination, and truth. Each session emphasizes awareness, connection, and disciplined exploration, guiding students to find stillness in chaos and life in text. He leads creative ventures like Relay Stories and Gitanjali Productions, both dedicated to nurturing original voices and meaningful performances that transcend medium and genre.",

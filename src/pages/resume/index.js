@@ -11,15 +11,15 @@ export const Resume = () => {
         <Helmet>
           <meta charSet="utf-8" />
           <title>Resume | {meta.title}</title>
-          <meta name="description" content="Aryan Bhattacharjee's professional resume" />
+          <meta name="description" content="Aryan Wangchuck's professional resume" />
         </Helmet>
 
         {/* Header */}
         <div className="resume-header">
           <div className="resume-header-content">
-            <h1 className="resume-name">Aryan Bhattacharjee</h1>
+            <h1 className="resume-name">Aryan Wangchuk</h1>
             <p className="resume-contact">
-              +1 (646) 400-4636 | aryanb1304@gmail.com
+              +1 (646) 957-6086 | aryanwangchuck@gmail.com
             </p>
             <Link to="/about" className="btn-back">← Back to About</Link>
           </div>
@@ -36,7 +36,14 @@ export const Resume = () => {
                 <h3 className="item-title">New York University, New York</h3>
                 <span className="item-date">September 2020 - May 2024</span>
               </div>
-              <p className="item-subtitle">BFA, Collaborative Arts (Tisch) & BA Philosophy</p>
+              <p className="item-subtitle">BFA, Collaborative Arts [Tisch] & BA. Philosophy</p>
+            </div>
+            <div className="resume-item">
+              <div className="item-header">
+                <h3 className="item-title">The Doon School, Dehradun</h3>
+                <span className="item-date">February 2015 - May 2020</span>
+              </div>
+              <p className="item-subtitle">IB Diploma Program, SAT 1510</p>
             </div>
           </section>
 
@@ -48,7 +55,7 @@ export const Resume = () => {
                 <h3 className="item-title">Corporate Financial Institute (CFI)</h3>
                 <span className="item-date">April 2024 - Present</span>
               </div>
-              <p className="item-subtitle">Financial Valuation and Modelling Analyst (in progress)</p>
+              <p className="item-subtitle">Financial Valuation and Modelling Analyst</p>
             </div>
             <div className="resume-item">
               <div className="item-header">
@@ -67,18 +74,16 @@ export const Resume = () => {
                 <h3 className="item-title">Visiting Professor, Himalayan Institute of Alternatives, Ladakh</h3>
                 <span className="item-date">July 2023</span>
               </div>
-              <ul className="item-list">
-                <li>Led a four-week seminar on "Aesthetics and the Grotesque" vis-à-vis indigenous and tribal forms of theatre and mimesis with over forty students.</li>
-                <li>The students chose and acquainted themselves with various tribal performance traditions they were familiar with to analyse the ways in which geography plays a role in our conception of beauty.</li>
-              </ul>
             </div>
             <div className="resume-item">
               <div className="item-header">
-                <h3 className="item-title">"Indian Art and the Future" - Sri Aurobindo's Action</h3>
-                <span className="item-date">December 2024</span>
+                <h3 className="item-title">Teaching Assistant, Filmmaking and Screenwriting, NYU</h3>
+                <span className="item-date">September 2023 - December 2023</span>
               </div>
               <ul className="item-list">
-                <li>Published a paper titled "Indian Art and the Future" in Sri Aurobindo's Action on South Asian artistic traditions, particularly those rooted in Sanatana Dharma, offer a teleological vision for art as a path to self-realisation and spiritual transformation.</li>
+                <li>Conducted recitation sessions on filmmaking and screenwriting.</li>
+                <li>Used relatable examples, such as comparing cinematic rhythm to musical phrasing, to make abstract principles like narrative pacing and visual storytelling accessible.</li>
+                <li>Fostered a collaborative learning environment where students felt encouraged to ask questions and actively participate.</li>
               </ul>
             </div>
           </section>
@@ -93,20 +98,31 @@ export const Resume = () => {
                 <span className="item-date">January 2021 - Present</span>
               </div>
               <ul className="item-list">
-                <li>Founded and led a production house focused on social awareness through art, bringing theatre and live performance to remote audiences in the Himalayan regions, emphasising education as a tool for social transformation.</li>
+                <li>Founded and led a production house focused on social awareness through art.</li>
                 <li>Managed a team of 12+, developed strategy, project management, fundraising, and marketing.</li>
-                <li>Produced two award-winning films and four internationally featured plays, hosted events, and partnered with various notable changemakers.</li>
+                <li>Produced 2 award-winning films and 4 internationally featured plays, hosted events, and partnered with various changemakers.</li>
               </ul>
             </div>
 
             <div className="resume-item">
               <div className="item-header">
-                <h3 className="item-title">Stag and Lion Theatre Company, New York - Creative Marketer</h3>
-                <span className="item-date">February 2024 - May 2024</span>
+                <h3 className="item-title">Light, Inc., New York - Founder & CEO</h3>
+                <span className="item-date">October 2025 - Present</span>
               </div>
               <ul className="item-list">
-                <li>Recruited and led a team of 4 interns to develop, produce, and distribute 19 advertisements via a publicity campaign for an off-off-Broadway Classical Theatre.</li>
-                <li>Doubled the theatre's box office revenue over 4 months to bring classical theatre to contemporary audiences.</li>
+                <li>Building a professional workflow OS for AI film that orchestrates production tasks across modern creative pipelines.</li>
+                <li>Currently being piloted at Warner Bros (Los Angeles).</li>
+              </ul>
+            </div>
+
+            <div className="resume-item">
+              <div className="item-header">
+                <h3 className="item-title">Relay Stories., New York - Founder & CEO</h3>
+                <span className="item-date">January 2025 - October 2025</span>
+              </div>
+              <ul className="item-list">
+                <li>Built and scaled a film discovery/storytelling platform to 3,000 monthly users.</li>
+                <li>Hosted 120+ films, including Oscar and Emmy nominated work.</li>
               </ul>
             </div>
 
@@ -116,7 +132,7 @@ export const Resume = () => {
                 <span className="item-date">January 2023 - August 2023</span>
               </div>
               <ul className="item-list">
-                <li>Developed, produced, successfully crowdfunded, and marketed an original play, 'Midnight Building' (focused on themes of substance abuse and adolescence), for presentation at Greenside Theatre.</li>
+                <li>Developed, produced, successfully crowdfunded, and marketed an original play, 'Midnight Building,' for a monthlong run at Greenside Theatre.</li>
               </ul>
             </div>
 
@@ -126,7 +142,7 @@ export const Resume = () => {
                 <span className="item-date">February 2023 - June 2023</span>
               </div>
               <ul className="item-list">
-                <li>Assisted the Academy Award-nominated director with post-production, editing, accessibility, captioning, and distribution strategy on a feature documentary about a Himalayan orphanage and school in North-Eastern India.</li>
+                <li>Assisted the Academy Award-nominated director with post-production, editing, accessibility, captioning, and distribution strategy on a feature documentary.</li>
               </ul>
             </div>
           </section>
@@ -137,13 +153,12 @@ export const Resume = () => {
             
             <div className="resume-item">
               <div className="item-header">
-                <h3 className="item-title">Helios, Media Application, New York - Founder & Creative Director</h3>
-                <span className="item-date">January 2024 - Present</span>
+                <h3 className="item-title">Snow, Animated Short Film (AI Powered), New York - Founder & Creative Director</h3>
+                <span className="item-date">January 2025 - Present</span>
               </div>
               <ul className="item-list">
-                <li>Conceptualised and designed an MVP for an app offering a mini-web series with 10–12-minute episodes.</li>
-                <li>Curated supplementary content centred around larger themes, including interviews, fiction, non-fiction, and music.</li>
-                <li>The app is live on the iOS App Store and Google Play Store.</li>
+                <li>Wrote and directed an animated short film powered entirely by AI (end-to-end AI-assisted pipeline).</li>
+                <li>Currently in the festival circuit.</li>
               </ul>
             </div>
 
@@ -186,6 +201,45 @@ export const Resume = () => {
               <ul className="item-list">
                 <li>Chronicling the plight of small fishermen and marine health in Eastern India, two fathers and their children cross paths, leading their lives to a bittersweet conclusion.</li>
               </ul>
+            </div>
+          </section>
+
+          {/* Awards */}
+          <section className="resume-section">
+            <h2 className="section-heading">Awards</h2>
+            <div className="awards-grid">
+              <div className="award-item">
+                <span className="award-title">Best Student Film 'Immortal'</span>
+                <span className="award-festival">World Film Carnival, Singapore</span>
+              </div>
+              <div className="award-item">
+                <span className="award-title">Best Short Film 'Immortal'</span>
+                <span className="award-festival">Art Blocks Film Festival, Denmark</span>
+              </div>
+              <div className="award-item">
+                <span className="award-title">Best Short Film 'Children of the Sea'</span>
+                <span className="award-festival">Smyrna International Film Festival, Turkey</span>
+              </div>
+              <div className="award-item">
+                <span className="award-title">Honourable Mention 'Children of the Sea'</span>
+                <span className="award-festival">Tokyo Film Festival, Japan</span>
+              </div>
+              <div className="award-item">
+                <span className="award-title">Best Short Film 'Immortal'</span>
+                <span className="award-festival">Gangtok International Film Festival, India</span>
+              </div>
+              <div className="award-item">
+                <span className="award-title">Finalist 'Children of the Sea'</span>
+                <span className="award-festival">4theatre Selection, USA</span>
+              </div>
+              <div className="award-item">
+                <span className="award-title">Official Selection 'Children of the Sea'</span>
+                <span className="award-festival">Paradise Film Festival, Hungary</span>
+              </div>
+              <div className="award-item">
+                <span className="award-title">Official Selection 'Children of the Sea'</span>
+                <span className="award-festival">CKF International Film Festival, England</span>
+              </div>
             </div>
           </section>
 

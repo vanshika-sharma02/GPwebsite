@@ -95,7 +95,6 @@ const Headermain = () => {
           <nav className="desktop-nav">
             <Link to="/" className={isActivePath("/") ? "active" : ""}>Home</Link>
             <Link to="/about" className={isActivePath("/about") || isActivePath("/resume") ? "active" : ""}>About</Link>
-            <Link to="/portfolio" className={isActivePath("/portfolio") ? "active" : ""}>Workshop</Link>
             <Link to="/contact" className={isActivePath("/contact") ? "active" : ""}>Contact</Link>
           </nav>
 
@@ -119,9 +118,6 @@ const Headermain = () => {
                   </li>
                   <li className="menu_item">
                     <Link onClick={handleClose} to="/about" className="my-3">About</Link>
-                  </li>
-                  <li className="menu_item">
-                    <Link onClick={handleClose} to="/portfolio" className="my-3">Workshop</Link>
                   </li>
                   <li className="menu_item">
                     <Link onClick={handleClose} to="/contact" className="my-3">Contact</Link>
